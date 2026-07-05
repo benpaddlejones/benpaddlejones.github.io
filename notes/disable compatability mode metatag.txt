@@ -1,3 +1,0 @@
-place metatag above all others below <head>
-
-<meta http-equiv="X-UA-Compatible" content="IE=10" />
