@@ -191,11 +191,11 @@ h2 {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
   gap: 1.25rem;
 }
 .card-grid.three {
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 .card-grid + .card-grid { margin-top: 1.25rem; }
@@ -330,7 +330,14 @@ blockquote cite {
 
 @media (max-width: 40rem) {
   .site-header ul { gap: 0.9rem; }
-  .site-header ul li:nth-child(n+4) { display: none; }
+  .site-header ul li:nth-child(3),
+  .site-header ul li:nth-child(4) { display: none; }
   .hero { padding-block: 3.5rem 3rem; }
   .stat-row { gap: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .card { transition: none; }
+  .btn:hover, .card:hover { transform: none; }
 }
